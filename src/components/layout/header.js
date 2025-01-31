@@ -11,14 +11,14 @@ const Header = () => {
           
           
 
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             <button className="px-4 py-2 text-gray-300 hover:text-white transition-colors">
               Sign In
             </button>
             <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
               Get Started
             </button>
-          </div>
+          </div> */}
         </div>
       </nav>
     </header>

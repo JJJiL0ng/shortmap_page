@@ -10,7 +10,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
             <div className="container mx-auto px-6 sm:px-6 py-16 sm:py-16 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-12">
+                <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-12">
                     {/* Left Content */}
                     <div className="max-w-xl lg:max-w-[50%] text-center lg:text-left space-y-8 sm:space-y-6">
                         <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold leading-tight">
@@ -53,7 +53,7 @@ export default function Hero() {
                     </div>
 
                     {/* Right Image with Animation */}
-                    <div className="lg:block w-full sm:w-[80%] lg:w-[40%] animate-float mt-12 lg:mt-0">
+                    <div className="lg:block w-full sm:w-[80%] lg:w-[40%] animate-float lg:mt-0">
                         <div className="relative w-full aspect-[4/5] lg:aspect-[3/4]">
                             <Image
                                 src="/preview-mockup.png"
