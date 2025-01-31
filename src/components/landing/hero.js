@@ -55,14 +55,13 @@ export default function Hero() {
                     {/* Right Image Section */}
                     <div className="lg:block w-full sm:w-[80%] lg:w-[55%]">
                         {/* Mobile Version */}
-                        <div className="block sm:hidden w-full max-w-[320px] mx-auto">
-                            <div className="relative w-full shadow-lg overflow-hidden">
+                        <div className="block sm:hidden w-full">
+                            <div className="relative w-full h-[500px] mx-auto">
                                 <Image
                                     src="/mockup_mobile.png"
                                     alt="Mobile App Preview"
-                                    width={320}
-                                    height={640}
-                                    className="object-contain w-full h-auto"
+                                    fill
+                                    className="object-contain"
                                     priority
                                 />
                             </div>
