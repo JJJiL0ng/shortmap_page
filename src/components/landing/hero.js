@@ -1,10 +1,38 @@
 // components/landing/Hero.js
+'use client';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Hero() {
+    const imageRef = useRef(null);
+    const [showScroll, setShowScroll] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!imageRef.current) return;
+            
+            const scrolled = window.scrollY;
+            const rate = Math.min(scrolled / 500, 1); // 500px 스크롤까지 애니메이션 진행
+            const translateY = Math.min(scrolled * 0.5, 200); // 최대 200px까지 이동
+            
+            imageRef.current.style.transform = `translateY(${translateY}px)`;
+            imageRef.current.style.opacity = Math.max(1 - rate, 0.3); // 최소 0.3 불투명도 유지
+
+            // Hide scroll indicator after 100px of scroll
+            if (scrolled > 100) {
+                setShowScroll(false);
+            } else {
+                setShowScroll(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <div className="min-h-screen bg-black relative overflow-hidden flex items-center">
+        <div className="min-h-[150vh] sm:min-h-screen bg-black relative overflow-hidden flex items-center">
             {/* Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
@@ -54,16 +82,38 @@ export default function Hero() {
 
                     {/* Right Image Section */}
                     <div className="lg:block w-full sm:w-[90%] lg:w-[65%] -mt-6 sm:mt-0">
-                        {/* Mobile Version */}
+                        {/* Mobile Version - Apple Style */}
                         <div className="block sm:hidden w-full mt-16">
-                            <div className="relative w-full h-[400px] sm:h-[500px] mx-auto">
-                                <Image
-                                    src="/mockup_mobile.png"
-                                    alt="Mobile App Preview"
-                                    fill
-                                    className="object-contain"
-                                    priority
-                                />
+                            <div className="sticky top-0 pt-16 h-screen overflow-hidden">
+                                <div 
+                                    ref={imageRef} 
+                                    className="relative w-full h-[600px] transition-transform duration-100 ease-out"
+                                >
+                                    <Image
+                                        src="/mockup_mobile_appleStyle.png"
+                                        alt="Mobile App Preview"
+                                        fill
+                                        className="object-contain"
+                                        priority
+                                    />
+                                </div>
+                                {/* Scroll Down Indicator */}
+                                <div className={`absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center transition-opacity duration-300 ${showScroll ? 'opacity-100' : 'opacity-0'}`}>
+                                    <div className="animate-bounce mb-2">
+                                        <svg 
+                                            className="w-6 h-6 text-white mx-auto"
+                                            fill="none" 
+                                            strokeLinecap="round" 
+                                            strokeLinejoin="round" 
+                                            strokeWidth="2" 
+                                            viewBox="0 0 24 24" 
+                                            stroke="currentColor"
+                                        >
+                                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                        </svg>
+                                    </div>
+                                    <span className="text-sm text-gray-300">Scroll to explore</span>
+                                </div>
                             </div>
                         </div>
 
