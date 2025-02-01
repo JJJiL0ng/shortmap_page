@@ -90,7 +90,7 @@ export default function Footer() {
           
           <div className="text-center md:text-right">
             <p className="text-gray-400 text-sm">
-              © {currentYear} ShortMap Inc. All rights reserved.
+              © {currentYear} ShortsMap Inc. All rights reserved.
             </p>
             <p className="text-gray-600 text-xs mt-1">
               Made with ❤️ in Seoul
