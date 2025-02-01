@@ -32,7 +32,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <div className="min-h-[150vh] sm:min-h-screen bg-black relative overflow-hidden flex items-center">
+        <div className="min-h-[150vh] sm:min-h-screen bg-black relative overflow-hidden">
             {/* Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
@@ -83,11 +83,11 @@ export default function Hero() {
                     {/* Right Image Section */}
                     <div className="lg:block w-full sm:w-[90%] lg:w-[65%] -mt-6 sm:mt-0">
                         {/* Mobile Version - Apple Style */}
-                        <div className="block sm:hidden w-full mt-16">
-                            <div className="sticky top-0 pt-16 h-screen overflow-hidden">
+                        <div className="block sm:hidden w-full mt-8">
+                            <div className="sticky top-0 pt-12 h-screen overflow-hidden">
                                 <div 
                                     ref={imageRef} 
-                                    className="relative w-full h-[600px] transition-transform duration-100 ease-out"
+                                    className="relative w-full h-[500px] transition-transform duration-100 ease-out"
                                 >
                                     <Image
                                         src="/mockup_mobile_appleStyle.png"
@@ -133,6 +133,9 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
+            
+            {/* Bottom Spacing */}
+            <div className="h-20 sm:h-32 lg:h-40"></div>
         </div>
     )
 }
