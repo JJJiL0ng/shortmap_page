@@ -37,7 +37,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
-            <div className="container mx-auto px-6 mt-16 sm:mt-0 py-12 relative z-10">
+            <div className="container mx-auto px-6 mt-16 sm:mt-40 py-12 relative z-10">
                 <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-16">
                     {/* Left Content */}
                     <div className="max-w-xl lg:max-w-[45%] text-center lg:text-left space-y-8 mt-4 sm:mt-8 lg:mt-0">
@@ -87,7 +87,7 @@ export default function Hero() {
                             <div className="sticky top-0 pt-12 h-screen overflow-hidden">
                                 <div 
                                     ref={imageRef} 
-                                    className="relative w-full h-[500px] transition-transform duration-100 ease-out"
+                                    className="relative w-full h-[550px] transition-transform duration-100 ease-out"
                                 >
                                     <Image
                                         src="/mockup_mobile_appleStyle.png"
@@ -98,7 +98,7 @@ export default function Hero() {
                                     />
                                 </div>
                                 {/* Scroll Down Indicator */}
-                                <div className={`absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center transition-opacity duration-300 ${showScroll ? 'opacity-100' : 'opacity-0'}`}>
+                                <div className={`absolute bottom-28 left-1/2 transform -translate-x-1/2 text-center transition-opacity duration-300 ${showScroll ? 'opacity-100' : 'opacity-0'}`}>
                                     <div className="animate-bounce mb-2">
                                         <svg 
                                             className="w-6 h-6 text-white mx-auto"
