@@ -14,17 +14,18 @@ export default function Hero() {
             if (!imageRef.current) return;
             
             const scrolled = window.scrollY;
-            const rate = Math.min(scrolled / 500, 1); // 500px 스크롤까지 애니메이션 진행
-            const translateY = Math.min(scrolled * 0.5, 200); // 최대 200px까지 이동
+            const rate = Math.min(scrolled / 500, 1);
+            const translateY = Math.min(scrolled * 0.5, 200);
             
             imageRef.current.style.transform = `translateY(${translateY}px)`;
-            imageRef.current.style.opacity = Math.max(1 - rate, 0.3); // 최소 0.3 불투명도 유지
+            imageRef.current.style.opacity = Math.max(1 - rate, 0.3);
 
-            // Hide scroll indicator after 100px of scroll
-            if (scrolled > 100) {
-                setShowScroll(false);
+            // 스크롤 인디케이터를 점진적으로 페이드 아웃
+            if (scrolled > 50) {
+                const scrollOpacity = Math.max(1 - ((scrolled - 50) / 50), 0);
+                setShowScroll(scrollOpacity);
             } else {
-                setShowScroll(true);
+                setShowScroll(1);
             }
         };
 

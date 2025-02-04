@@ -2,8 +2,12 @@
 
 export default function ScrollIndicator({ show }) {
     return (
-        <div style={{ left: '50%', transform: 'translateX(-50%)' }} 
-             className={`absolute bottom-28 text-center transition-all ease-in-out duration-500 ${show ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div style={{ 
+            left: '50%', 
+            transform: 'translateX(-50%)',
+            opacity: show // show를 직접 opacity 값으로 사용
+        }} 
+        className={`absolute bottom-28 text-center transition-all ease-in-out duration-300 ${show === 0 ? 'pointer-events-none' : ''}`}>
             <div className="animate-bounce mb-2">
                 <svg 
                     className="w-6 h-6 text-white mx-auto"
