@@ -2,7 +2,8 @@
 
 export default function ScrollIndicator({ show }) {
     return (
-        <div className={`absolute bottom-28 left-1/2 transform -translate-x-1/2 text-center transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
+        <div style={{ left: '50%', transform: 'translateX(-50%)' }} 
+             className={`fixed bottom-28 text-center transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
             <div className="animate-bounce mb-2">
                 <svg 
                     className="w-6 h-6 text-white mx-auto"

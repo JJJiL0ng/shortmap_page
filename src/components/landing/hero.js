@@ -88,7 +88,7 @@ export default function Hero() {
                             <div className="sticky top-0 pt-12 h-screen overflow-hidden">
                                 <div 
                                     ref={imageRef} 
-                                    className="relative w-full h-[650px] transition-transform duration-100 ease-out"
+                                    className="relative w-full h-[550px] transition-transform duration-100 ease-out"
                                 >
                                     <Image
                                         src="/mockup_mobile_appleStyle.png"
