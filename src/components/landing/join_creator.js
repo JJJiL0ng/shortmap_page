@@ -6,8 +6,8 @@ export default function JoinCreator() {
     {
       icon: <Instagram className="w-6 h-6" />,
       platform: "Instagram",
-      handle: "@shortmap.global",
-      link: "https://instagram.com/shortmap.global",
+      handle: "@shortmap.app",
+      link: "https://www.instagram.com/shortsmap.app",
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
@@ -18,14 +18,14 @@ export default function JoinCreator() {
     {
       icon: <Mail className="w-6 h-6" />,
       platform: "Gmail",
-      handle: "hello@shortmap.com",
-      link: "mailto:hello@shortmap.com",
+      handle: "shortsmap.team@gmail.com",
+      link: "mailto:shortsmap.team@gmail.com",
     },
     {
       icon: <Twitter className="w-6 h-6" />,
       platform: "X (Twitter)",
       handle: "@shortmap_official",
-      link: "https://twitter.com/shortmap_official",
+      link: "https://x.com/shortsmap?s=21&t=ce4PjMMbTShI46JEllgUTQ",
     }
   ]
 
