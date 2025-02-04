@@ -54,7 +54,7 @@ export default function Contact() {
               href={method.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-primary transition-all hover:-translate-y-1 group"
+              className="p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-primary transition-all hover:-translate-y-1 group"
             >
               <div className="flex items-center mb-4 text-primary">
                 {method.icon}

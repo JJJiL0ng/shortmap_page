@@ -82,13 +82,13 @@ export default function Hero() {
                     </div>
 
                     {/* Right Image Section */}
-                    <div className="lg:block w-full sm:w-[90%] lg:w-[65%] -mt-6 sm:mt-0">
+                    <div className="lg:block w-full sm:w-[90%] lg:w-[75%] -mt-6 sm:mt-0">
                         {/* Mobile Version - Apple Style */}
                         <div className="block sm:hidden w-full mt-8">
                             <div className="sticky top-0 pt-12 h-screen overflow-hidden">
                                 <div 
                                     ref={imageRef} 
-                                    className="relative w-full h-[550px] transition-transform duration-100 ease-out"
+                                    className="relative w-full h-[650px] transition-transform duration-100 ease-out"
                                 >
                                     <Image
                                         src="/mockup_mobile_appleStyle.png"
@@ -108,9 +108,9 @@ export default function Hero() {
                                 <Image
                                     src="/preview-mockup_forPc.png"
                                     alt="Desktop App Preview"
-                                    width={800}
-                                    height={1000}
-                                    className="w-[500px] md:w-[650px] lg:w-[800px] h-auto transition-transform duration-300 hover:scale-105"
+                                    width={900}
+                                    height={1100}
+                                    className="w-[600px] md:w-[750px] lg:w-[900px] h-auto transition-transform duration-300 hover:scale-105"
                                     priority
                                 />
                             </div>

@@ -48,7 +48,7 @@ export default function JoinCreator() {
   ]
 
   return (
-    <div className="py-24 bg-gray-900">
+    <div className="py-24 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold mb-4 block">JOIN THE REVOLUTION</span>
@@ -69,7 +69,7 @@ export default function JoinCreator() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-black border border-gray-800"
+              className="p-6 rounded-xl bg-gray-800 border border-gray-700"
             >
               <div className="mb-4">{benefit.icon}</div>
               <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
@@ -92,7 +92,7 @@ export default function JoinCreator() {
                 href={method.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-lg bg-black border border-gray-800 hover:border-primary transition-all hover:-translate-y-1"
+                className="p-4 rounded-lg bg-gray-800 border border-gray-700 hover:border-primary transition-all hover:-translate-y-1"
               >
                 <div className="flex items-center justify-center text-primary mb-2">
                   {method.icon}

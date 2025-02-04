@@ -21,7 +21,7 @@ export default function MainFeature() {
   ]
 
   return (
-    <div className="py-32 bg-gradient-to-b from-gray-900 to-black" id="features">
+    <div className="py-32 bg-black" id="features">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <span className="text-primary text-sm font-medium uppercase tracking-wider">Features</span>
@@ -39,7 +39,7 @@ export default function MainFeature() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group p-8 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-primary hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300"
+              className="group p-8 rounded-2xl bg-gray-800 border border-gray-700 hover:border-primary hover:scale-105 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300"
             >
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
