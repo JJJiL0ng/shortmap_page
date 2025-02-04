@@ -1,35 +1,35 @@
 // components/landing/Contact.js
-import { Instagram, Mail, MessageCircle } from 'lucide-react'
+import { Instagram, Mail, MessageCircle, Twitter } from 'lucide-react'
 
 export default function Contact() {
   const contactMethods = [
     {
       icon: <Instagram className="w-6 h-6" />,
       platform: "Instagram",
-      handle: "@shortmap.global",
-      link: "https://instagram.com/shortmap.global",
+      handle: "@shortmap.app",
+      link: "https://www.instagram.com/shortsmap.app",
       description: "Follow our journey and daily updates"
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
       platform: "WhatsApp",
-      handle: "+1 (555) 0123-4567",
-      link: "https://wa.me/15550123456",
+      handle: "+82 10-5475-6097",
+      link: "https://wa.me/821054756097",
       description: "Available for quick chats and inquiries"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       platform: "Gmail",
-      handle: "hello@shortmap.com",
-      link: "mailto:hello@shortmap.com",
+      handle: "shortsmap.team@gmail.com",
+      link: "mailto:shortsmap.team@gmail.com",
       description: "For partnerships and detailed discussions"
     },
     {
-      icon: <MessageCircle className="w-6 h-6" />,
-      platform: "LINE",
-      handle: "@shortmap_official",
-      link: "https://line.me/ti/p/@shortmap_official",
-      description: "Connect with our Asian community"
+      icon: <Twitter className="w-6 h-6" />,
+      platform: "X (Twitter)",
+      handle: "@shortmap",
+      link: "https://x.com/shortsmap?s=21&t=ce4PjMMbTShI46JEllgUTQ",
+      description: "Connect with our global community"
     }
   ]
 
