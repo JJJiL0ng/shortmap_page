@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
+import ScrollIndicator from '@/ui/common/scroll_indicatior';
 
 export default function Hero() {
     const imageRef = useRef(null);
@@ -97,23 +98,7 @@ export default function Hero() {
                                         priority
                                     />
                                 </div>
-                                {/* Scroll Down Indicator */}
-                                <div className={`absolute bottom-28 left-1/2 transform -translate-x-1/2 text-center transition-opacity duration-300 ${showScroll ? 'opacity-100' : 'opacity-0'}`}>
-                                    <div className="animate-bounce mb-2">
-                                        <svg 
-                                            className="w-6 h-6 text-white mx-auto"
-                                            fill="none" 
-                                            strokeLinecap="round" 
-                                            strokeLinejoin="round" 
-                                            strokeWidth="2" 
-                                            viewBox="0 0 24 24" 
-                                            stroke="currentColor"
-                                        >
-                                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                                        </svg>
-                                    </div>
-                                    <span className="text-sm text-gray-300">Scroll to explore</span>
-                                </div>
+                                <ScrollIndicator show={showScroll} />
                             </div>
                         </div>
 
@@ -125,7 +110,7 @@ export default function Hero() {
                                     alt="Desktop App Preview"
                                     width={800}
                                     height={1000}
-                                    className="w-[500px] md:w-[650px] lg:w-[800px] h-auto"
+                                    className="w-[500px] md:w-[650px] lg:w-[800px] h-auto transition-transform duration-300 hover:scale-105"
                                     priority
                                 />
                             </div>

@@ -1,5 +1,5 @@
 // components/landing/JoinCreator.js
-import { Instagram, Mail, MessageCircle, Star } from 'lucide-react'
+import { Instagram, Mail, MessageCircle, Star, Twitter } from 'lucide-react'
 
 export default function JoinCreator() {
   const contactMethods = [
@@ -22,10 +22,10 @@ export default function JoinCreator() {
       link: "mailto:hello@shortmap.com",
     },
     {
-      icon: <MessageCircle className="w-6 h-6" />,
-      platform: "LINE",
+      icon: <Twitter className="w-6 h-6" />,
+      platform: "X (Twitter)",
       handle: "@shortmap_official",
-      link: "https://line.me/ti/p/@shortmap_official",
+      link: "https://twitter.com/shortmap_official",
     }
   ]
 
