@@ -34,48 +34,57 @@ export default function Hero() {
     }, []);
 
     return (
-        <div className="min-h-[150vh] sm:min-h-screen bg-black relative overflow-hidden">
-            {/* Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+        <div className="min-h-[150vh] sm:min-h-screen bg-[var(--third)] bg-opacity-5 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--third)] opacity-10" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-15" />
 
             <div className="container mx-auto px-6 mt-16 sm:mt-40 py-12 relative z-10">
                 <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-16">
                     {/* Left Content */}
                     <div className="max-w-xl lg:max-w-[45%] text-center lg:text-left space-y-8 mt-4 sm:mt-8 lg:mt-0">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[var(--black)]">
                             Experience Places Through
-                            <span className="gradient-text block mt-3">Short Videos</span>
+                            <span className="gradient-text block mt-3">
+                                Short Videos
+                            </span>
                         </h1>
 
-                        <p className="text-gray-300 text-lg sm:text-xl mb-8 max-w-lg mx-auto lg:mx-0">
+                        <p className="text-[var(--gray-800)] text-lg sm:text-xl mb-8 max-w-lg mx-auto lg:mx-0">
                             Discover authentic local experiences through immersive short-form videos.
                             Your next favorite spot is just a short video away.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-10">
-                            <Link href="/contact" className="w-full sm:w-auto">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#DC143C] to-[#FF69B4] text-white rounded-xl font-medium hover:opacity-90 transition-all hover:scale-105">
-                                    Contact Us
-                                </button>
+                        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <Link href="/getstartApple" className="w-full sm:w-auto">
+                                <Image
+                                    src="/app-store-badge.png"
+                                    alt="Download on the App Store"
+                                    width={120}
+                                    height={40}
+                                    className="w-full sm:w-[200px] hover:opacity-80 transition-opacity duration-300"
+                                />
                             </Link>
-                            <Link href="/join_creator" className="w-full sm:w-auto">
-                                <button className="w-full sm:w-auto px-8 py-4 border-2 border-gray-600 text-white rounded-xl hover:border-[#DC143C] transition-all hover:scale-105">
-                                    Become Creator
-                                </button>
+                            <Link href="/getstartGoogle" className="w-full sm:w-auto">
+                                <Image
+                                    src="/google-play-badge.png"
+                                    alt="Get it on Google Play"
+                                    width={120}
+                                    height={40}
+                                    className="w-full sm:w-[200px] hover:opacity-80 transition-opacity duration-300"
+                                />
                             </Link>
                         </div>
 
                         {/* Stats Section */}
-                        <div className="text-gray-400">
+                        <div className="text-[var(--gray-800)]">
                             <p className="font-medium mb-4 text-lg">Trusted by adventurous souls worldwide</p>
                             <div className="flex justify-center lg:justify-start gap-12">
                                 <div className="flex flex-col items-center lg:items-start">
-                                    <span className="text-2xl font-bold text-white mb-1">100K+</span>
+                                    <span className="text-2xl font-bold text-[var(--primary)] mb-1">100K+</span>
                                     <span className="text-sm">Active Users(Hope)</span>
                                 </div>
                                 <div className="flex flex-col items-center lg:items-start">
-                                    <span className="text-2xl font-bold text-white mb-1">50K+</span>
+                                    <span className="text-2xl font-bold text-[var(--third)] mb-1">50K+</span>
                                     <span className="text-sm">Places Mapped(Hope)</span>
                                 </div>
                             </div>
