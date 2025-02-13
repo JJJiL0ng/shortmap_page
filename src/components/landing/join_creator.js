@@ -6,8 +6,8 @@ export default function JoinCreator() {
     {
       icon: <Instagram className="w-6 h-6" />,
       platform: "Instagram",
-      handle: "@shortmap.app",
-      link: "https://www.instagram.com/shortsmap.app",
+      handle: "@shortmap_official",
+      link: "https://www.instagram.com/shortsmap_official",
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,

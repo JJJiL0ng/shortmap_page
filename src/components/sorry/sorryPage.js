@@ -5,8 +5,8 @@ export default function SorryPage() {
     {
       icon: <Instagram className="w-6 h-6" />,
       platform: "Instagram",
-      handle: "@shortmap.app",
-      link: "https://www.instagram.com/shortsmap.app",
+      handle: "@shortsmap_official",
+      link: "https://www.instagram.com/shortsmap_official/",
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
@@ -19,6 +19,12 @@ export default function SorryPage() {
       platform: "Gmail",
       handle: "shortsmap.team",
       link: "mailto:shortsmap.team@gmail.com",
+    },
+    {
+      icon: <Twitter className="w-6 h-6" />,
+      platform: "X (Twitter)",
+      handle: "@shortmap",
+      link: "https://x.com/shortsmap?s=21&t=ce4PjMMbTShI46JEllgUTQ",
     }
   ]
 
