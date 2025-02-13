@@ -7,8 +7,8 @@ export default function Contact() {
     {
       icon: <Instagram className="w-6 h-6" />,
       platform: "Instagram",
-      handle: "@shortmap.app",
-      link: "https://www.instagram.com/shortsmap.app",
+      handle: "@shortsmap_official",
+      link: "https://www.instagram.com/shortsmap_official/",
       description: "Follow our journey and daily updates"
     },
     {

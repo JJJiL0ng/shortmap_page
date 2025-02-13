@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="fixed w-full bg-[var(--white)]/80 backdrop-blur-md z-50 border-b border-[var(--gray-300)]">
+    <header className="fixed w-full bg-[var(--white)]/80 backdrop-blur-md z-50 border-b border-[var(--gray-300)]/30">
       <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary)] to-[var(--third)] opacity-5" />
       
-      <nav className="container mx-auto px-4 py-4 relative z-10">
+      <nav className="container mx-auto px-4 py-10 relative z-10">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold">
             <span className="gradient-text">ShortsMap</span>
