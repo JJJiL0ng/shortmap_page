@@ -102,7 +102,7 @@ export default function Footer() {
               © {currentYear} ShortsMap Inc. All rights reserved.
             </p>
             <p className="text-[var(--gray-800)] text-xs mt-1">
-              Made with <span className="text-[var(--pink)]">❤️</span> in Seoul
+              Made with <span className="text-[var(--pink)]">❤️</span> in World
             </p>
           </div>
         </div>

@@ -45,14 +45,13 @@ export default function Hero() {
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[var(--black)]">
                             Experience Places Through
                             <span className="gradient-text block mt-3">
-                                Short Videos
+                                Short Videos!
                             </span>
                         </h1>
 
                         <p className="text-[var(--gray-800)] text-lg sm:text-xl mb-8 max-w-lg mx-auto lg:mx-0">
-                            Discover authentic local experiences through immersive short-form videos.
-                            Your next favorite spot is just a short video away.
-                        </p>
+                            Map your favorite spot in one tap.
+                            Discover the real vibe that photos and text can’t capture.                        </p>
 
                         <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                             <Link href="/getstartApple" className="w-full sm:w-auto">

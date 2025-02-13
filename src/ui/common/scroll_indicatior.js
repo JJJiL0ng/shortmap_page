@@ -14,14 +14,14 @@ export default function ScrollIndicator({ show }) {
                     fill="none" 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
-                    strokeWidth="2" 
+                    strokeWidth="3" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
                 >
                     <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
             </div>
-            <span className="text-sm text-gray-300">Scroll to explore</span>
+            <span className="text-xl text-gray-300">Scroll to explore</span>
         </div>
     );
 }
