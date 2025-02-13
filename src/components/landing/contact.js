@@ -1,6 +1,7 @@
 // components/landing/Contact.js
 import { Instagram, Mail, MessageCircle, Twitter } from 'lucide-react'
 
+
 export default function Contact() {
   const contactMethods = [
     {
@@ -13,8 +14,8 @@ export default function Contact() {
     {
       icon: <MessageCircle className="w-6 h-6" />,
       platform: "WhatsApp",
-      handle: "+82 10-5475-6097",
-      link: "https://wa.me/821054756097",
+      handle: "ShortsMap community",
+      link: "https://chat.whatsapp.com/FdHejSjFSUy3qBkLUX0gfq",
       description: "Available for quick chats and inquiries"
     },
     {
@@ -34,14 +35,17 @@ export default function Contact() {
   ]
 
   return (
-    <div className="py-24 bg-black">
-      <div className="container mx-auto px-4">
+    <div className="py-24 bg-[var(--third)] bg-opacity-5 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--third)] opacity-10" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-15" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4 text-[var(--black)]">
             Let&apos;s Stay
-            <span className="gradient-text"> Connected</span>
+            <span className="gradient-text block mt-2">Connected</span>
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-[var(--gray-800)] text-lg">
             Have questions or want to collaborate? We&apos;re just a message away. 
             Choose your preferred platform and let&apos;s create something amazing together.
           </p>
@@ -54,16 +58,16 @@ export default function Contact() {
               href={method.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-primary transition-all hover:-translate-y-1 group"
+              className="p-6 rounded-xl bg-white/80 hover:bg-white border border-[var(--gray-300)] hover:border-[var(--pink)] transition-all hover:-translate-y-1 group"
             >
-              <div className="flex items-center mb-4 text-primary">
+              <div className="flex items-center mb-4 text-[var(--pink)]">
                 {method.icon}
                 <span className="ml-2 font-medium">{method.platform}</span>
               </div>
-              <p className="text-white font-semibold mb-2">
+              <p className="text-[var(--gray-800)] font-semibold mb-2">
                 {method.handle}
               </p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-[var(--gray-800)] text-sm">
                 {method.description}
               </p>
             </a>
@@ -71,7 +75,7 @@ export default function Contact() {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-gray-400">
+          <p className="text-[var(--gray-800)]">
             Response Time: Usually within 24 hours
             <span className="block mt-2 text-sm">
               Available in English, 한국어, 日本語

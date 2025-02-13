@@ -12,8 +12,8 @@ export default function JoinCreator() {
     {
       icon: <MessageCircle className="w-6 h-6" />,
       platform: "WhatsApp",
-      handle: "+1 (555) 0123-4567",
-      link: "https://wa.me/15550123456",
+      handle: "shortsMap community",
+      link: "https://chat.whatsapp.com/FdHejSjFSUy3qBkLUX0gfq",
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -48,39 +48,39 @@ export default function JoinCreator() {
   ]
 
   return (
-    <div className="py-24 bg-black">
-      <div className="container mx-auto px-4">
+    <div className="py-24 bg-[var(--third)] bg-opacity-5 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--third)] opacity-10" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-15" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-semibold mb-4 block">JOIN THE REVOLUTION</span>
-          <h2 className="text-4xl font-bold mb-4">
+          <span className="text-[var(--peach)] font-semibold mb-4 block">JOIN THE REVOLUTION</span>
+          <h2 className="text-4xl font-bold mb-4 text-[var(--black)]">
             Become a Pioneer of the
             <span className="gradient-text block mt-2">Next-Gen Digital Map</span>
           </h2>
-          <p className="text-gray-400 text-lg mb-8">
+          <p className="text-[var(--gray-800)] text-lg mb-8">
             ShortMap is redefining local discovery for the video-first generation.
             We&apos;re not just another Yelp - we&apos;re the future of experiential mapping.
           </p>
-          <div className="inline-block border border-primary text-primary px-6 py-3 rounded-lg">
+          <div className="inline-block border-2 border-[var(--pink)] text-[var(--pink)] hover:bg-[var(--pink)] hover:text-white px-6 py-3 rounded-full transition-all duration-300">
             Early Creator Applications Now Open
           </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
           {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-xl bg-gray-800 border border-gray-700"
-            >
-              <div className="mb-4">{benefit.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-              <p className="text-gray-400">{benefit.description}</p>
+            <div key={index} className="p-6 rounded-xl bg-white/80 hover:bg-white border border-[var(--gray-300)] transition-all hover:-translate-y-1">
+              <div className="mb-4 text-[var(--peach)]">{benefit.icon}</div>
+              <h3 className="text-xl font-bold mb-3 text-[var(--pink)]">{benefit.title}</h3>
+              <p className="text-[var(--gray-800)]">{benefit.description}</p>
             </div>
           ))}
         </div>
 
         <div className="max-w-2xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-6">Ready to Join?</h3>
-          <p className="text-gray-400 mb-8">
+          <h3 className="text-2xl font-bold mb-6 text-[var(--black)]">Ready to Join?</h3>
+          <p className="text-[var(--gray-800)] mb-8">
             Contact us through any of the following platforms. 
             Mention &quot;EARLY CREATOR&quot; to fast-track your application.
           </p>
@@ -92,18 +92,18 @@ export default function JoinCreator() {
                 href={method.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-lg bg-gray-800 border border-gray-700 hover:border-primary transition-all hover:-translate-y-1"
+                className="p-4 bg-white/80 hover:bg-white rounded-xl border border-[var(--gray-300)] hover:border-[var(--pink)] transition-all hover:-translate-y-1"
               >
-                <div className="flex items-center justify-center text-primary mb-2">
+                <div className="flex items-center justify-center text-[var(--pink)] mb-2">
                   {method.icon}
                 </div>
-                <p className="text-sm text-gray-400">{method.handle}</p>
+                <p className="text-sm text-[var(--gray-800)]">{method.handle}</p>
               </a>
             ))}
           </div>
 
           <div className="mt-12">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-[var(--gray-800)]">
               Limited spots available for early creators.
               <span className="block mt-1">
                 First 100 verified creators receive exclusive benefits package.
