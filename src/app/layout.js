@@ -8,13 +8,20 @@ import Footer from '@/components/layout/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://shortmap.xyz'),
   title: 'ShortMap - Experience Places Through Short Videos',
   description: 'Discover and share local experiences through short-form videos. Save your favorite spots and become a creator in our location-based video platform.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+  },
   openGraph: {
     title: 'ShortMap - Experience Places Through Short Videos',
     description: 'Discover and share local experiences through short-form videos',
     type: 'website',
-    url: 'https://shortmap.com',
+    url: 'https://shortmap.xyz',
     images: [
       {
         url: '/og-image.jpg',
