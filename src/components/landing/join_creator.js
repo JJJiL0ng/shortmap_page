@@ -18,7 +18,7 @@ export default function JoinCreator() {
     {
       icon: <Mail className="w-6 h-6" />,
       platform: "Gmail",
-      handle: "shortsmap.team@gmail.com",
+      handle: "shortsmap.team",
       link: "mailto:shortsmap.team@gmail.com",
     },
     {
