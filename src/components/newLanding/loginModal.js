@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/react';
 
 
 function LoginModal({ isOpen, onClose }) {
@@ -9,27 +10,31 @@ function LoginModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const handleGoogleLogin = () => {
-    router.push('/googleSorry');
+    Analytics.track('Click Google Login');
+    router.push('/commingSoon');
   };
 
   const handleAppleLogin = () => {
-    router.push('/appleSorry');
+    Analytics.track('Click Apple Login');
+    router.push('/commingSoon');
   };
 
   const handleSignUp = () => {
-    router.push('/signupSorry');
+    Analytics.track('Click Sign Up');
+    router.push('/commingSoon');
   };
 
   const handleClose = () => {
-    router.push('/closeSorry');
+    Analytics.track('Close Login Modal');
+    router.push('/commingSoon');
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-[var(--white)] rounded-2xl p-6 max-w-sm w-full mx-4 relative shadow-lg">
+      <div className="bg-[var(--white)] rounded-2xl p-6 max-w-[320px] w-full mx-4 relative shadow-lg">
         {/* Close button */}
         <button 
-          className="absolute top-4 right-4 text-[var(--pink)] hover:text-[var(--mint)] transition-colors"
+          className="absolute top-4 right-4 text-[var(--gray-600)] hover:text-[var(--gray-800)] transition-colors"
           onClick={handleClose}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,38 +43,32 @@ function LoginModal({ isOpen, onClose }) {
         </button>
 
         <div className="text-center">
-          <Image
-            src="/android-chrome-192x192.png"
-            alt="shortsmap"
-            width={64}
-            height={64}
-            className="mx-auto mb-4"
-          />
-          <h2 className="text-2xl font-bold mb-4 text-[var(--pink)]">Let&apos;s start</h2>
-          
+          <h2 className="text-3xl font-semibold mb-5 text-[var(--pink)]">Get Started!</h2>
           <button 
-            className="w-full bg-black text-white font-semibold py-3 rounded-lg mb-3 flex items-center justify-center gap-2"
-            onClick={handleAppleLogin}
-          >
-            <Image src="/apple-logo.png" alt="Apple" width={20} height={20} />
-            log in with Apple
-          </button>
-          
-          <button 
-            className="w-full bg-white border border-gray-300 text-black font-semibold py-3 rounded-lg mb-3 flex items-center justify-center gap-2"
+            className="w-full bg-white border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-full mb-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
             onClick={handleGoogleLogin}
           >
-            <Image src="/google-logo.png" alt="Google" width={20} height={20} />
-            log in with Google
+            <Image src="/googleIcon.png" alt="Google" width={20} height={20} />
+            Sign in with Google
           </button>
           
-          <div className="border-t border-[var(--gray-200)] pt-6">
-            <p className="text-[var(--gray-600)] mb-4">Don&apos;t have an account?</p>
+          <button 
+            className="w-full bg-black text-white font-medium py-3 px-4 rounded-full mb-3 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+            onClick={handleAppleLogin}
+          >
+            <Image src="/appleIcon.png" alt="Apple" width={20} height={20} />
+            Sign in with Apple
+          </button>
+          
+          
+          
+          <div className="border-t border-gray-200 pt-4 mt-3">
+            <p className="text-sm text-gray-600 mb-3">Don&apos;t have an account?</p>
             <button 
-              className="w-full bg-[var(--mint)] text-white font-semibold py-3 rounded-lg hover:bg-[var(--pink)] transition-colors"
+              className="w-full bg-[var(--pink)] text-white font-medium py-3 rounded-full hover:bg-[var(--mint)] transition-colors"
               onClick={handleSignUp}
             >
-              Sign Up
+              Sign up
             </button>
           </div>
         </div>

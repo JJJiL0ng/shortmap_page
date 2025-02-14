@@ -4,9 +4,9 @@
 
 :root {
   /* 메인 컬러 */
-  --mint: #65BFC4;      /* 배경 메인 컬러 */
-  --pink: #DC6B8E;      /* 텍스트 메인 컬러 */
-  --peach: #EFB88B;     /* 포인트 컬러 */
+  --mint: #55acb1;      
+  --pink: #FF9999;      
+  --peach: #EFB88B;     
   
   /* 중성색 */
   --white: #F0F9FA;     /* 민트빛이 도는 화이트 */
