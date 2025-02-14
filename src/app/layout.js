@@ -38,14 +38,14 @@ export default function RootLayout({ children }) {
  return (
    <html lang="en">
      <body className={`${inter.className} `}>
-       <Header />
+       {/* <Header /> */}
        {children}
        <Analytics debug={true} />
        <SpeedInsights 
          debug={true}
          sampleRate={1}
        />
-       <Footer />
+       {/* <Footer /> */}
      </body>
    </html>
  )

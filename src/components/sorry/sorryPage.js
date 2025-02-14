@@ -15,12 +15,6 @@ export default function SorryPage() {
       link: "https://chat.whatsapp.com/FdHejSjFSUy3qBkLUX0gfq",
     },
     {
-      icon: <Mail className="w-6 h-6" />,
-      platform: "Gmail",
-      handle: "shortsmap.team",
-      link: "mailto:shortsmap.team@gmail.com",
-    },
-    {
       icon: <Twitter className="w-6 h-6" />,
       platform: "X (Twitter)",
       handle: "@shortmap",
