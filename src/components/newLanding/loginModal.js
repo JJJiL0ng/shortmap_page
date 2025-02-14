@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Analytics } from '@vercel/analytics/react';
+import { track } from '@vercel/analytics';
 
 
 function LoginModal({ isOpen, onClose }) {
@@ -10,22 +10,22 @@ function LoginModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const handleGoogleLogin = () => {
-    Analytics.track('Click Google Login');
+    track('Click Google Login');
     router.push('/commingSoon');
   };
 
   const handleAppleLogin = () => {
-    Analytics.track('Click Apple Login');
+    track('Click Apple Login');
     router.push('/commingSoon');
   };
 
   const handleSignUp = () => {
-    Analytics.track('Click Sign Up');
+    track('Click Sign Up');
     router.push('/commingSoon');
   };
 
   const handleClose = () => {
-    Analytics.track('Close Login Modal');
+    track('Close Login Modal');
     router.push('/commingSoon');
   };
 
