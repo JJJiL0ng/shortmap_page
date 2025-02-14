@@ -53,12 +53,14 @@ export default function Footer() {
               <ul className="space-y-2">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <Link 
+                    {/* <Link 
                       href={link.href} 
                       className="text-[var(--gray-800)] hover:text-[var(--pink)] transition-colors text-sm"
-                    >
-                      {link.name}
-                    </Link>
+                    > */}
+                      <span className="text-[var(--gray-800)] text-sm cursor-not-allowed">
+                        {link.name}
+                      </span>
+                    {/* </Link> */}
                   </li>
                 ))}
               </ul>
@@ -69,12 +71,14 @@ export default function Footer() {
               <ul className="space-y-2">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
-                    <Link 
+                    {/* <Link 
                       href={link.href} 
                       className="text-[var(--gray-800)] hover:text-[var(--pink)] transition-colors text-sm"
-                    >
-                      {link.name}
-                    </Link>
+                    > */}
+                      <span className="text-[var(--gray-800)] text-sm cursor-not-allowed">
+                        {link.name}
+                      </span>
+                    {/* </Link> */}
                   </li>
                 ))}
               </ul>
