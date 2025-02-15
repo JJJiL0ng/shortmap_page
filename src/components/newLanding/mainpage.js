@@ -1,10 +1,22 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { track } from '@vercel/analytics';
 import LoginModal from './loginModal';
 
 export default function MainPage() {
   const [isModalOpen, setIsModalOpen] = useState(true);
+
+  useEffect(() => {
+    const startTime = Date.now();
+    
+    return () => {
+      const duration = Math.floor((Date.now() - startTime) / 1000); // 체류 시간(초)
+      track('Page Visit Duration', { 
+        durationInSeconds: duration
+      });
+    };
+  }, []);
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
