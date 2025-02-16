@@ -11,22 +11,22 @@ function LoginModal({ isOpen, onClose }) {
 
   const handleGoogleLogin = () => {
     track('Click Google Login');
-    router.push('/commingSoon');
+    router.push('/start');
   };
 
   const handleAppleLogin = () => {
     track('Click Apple Login');
-    router.push('/commingSoon');
+    router.push('/start');
   };
 
   const handleSignUp = () => {
     track('Click Sign Up');
-    router.push('/commingSoon');
+    router.push('/start');
   };
 
   const handleClose = () => {
     track('Close Login Modal');
-    router.push('/commingSoon');
+    router.push('/start');
   };
 
   return (
