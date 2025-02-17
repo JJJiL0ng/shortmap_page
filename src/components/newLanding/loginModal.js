@@ -28,44 +28,48 @@ function LoginModal({ isOpen, onClose }) {
   // 각 버튼별로 다른 컬렉션에 저장하는 함수들
   const logGoogleButtonClick = async () => {
     try {
-      await addDoc(collection(db, 'googleLogins'), {
+      await addDoc(collection(db, 'buttonClicks'), {
         timestamp: serverTimestamp(),
+        buttonType: 'google'
       });
     } catch (error) {
-      console.error('구글 버튼 클릭 로깅 에러:', error);
+      console.error('버튼 클릭 로깅 에러:', error);
     }
     router.push('/start');
   };
 
   const logAppleButtonClick = async () => {
     try {
-      await addDoc(collection(db, 'appleLogins'), {
+      await addDoc(collection(db, 'buttonClicks'), {
         timestamp: serverTimestamp(),
+        buttonType: 'apple'
       });
     } catch (error) {
-      console.error('애플 버튼 클릭 로깅 에러:', error);
+      console.error('버튼 클릭 로깅 에러:', error);
     }
     router.push('/start');
   };
 
   const logSignUpButtonClick = async () => {
     try {
-      await addDoc(collection(db, 'signups'), {
+      await addDoc(collection(db, 'buttonClicks'), {
         timestamp: serverTimestamp(),
+        buttonType: 'signup'
       });
     } catch (error) {
-      console.error('회원가입 버튼 클릭 로깅 에러:', error);
+      console.error('버튼 클릭 로깅 에러:', error);
     }
     router.push('/start');
   };
 
   const logCloseButtonClick = async () => {
     try {
-      await addDoc(collection(db, 'modalCloses'), {
+      await addDoc(collection(db, 'buttonClicks'), {
         timestamp: serverTimestamp(),
+        buttonType: 'close'
       });
     } catch (error) {
-      console.error('닫기 버튼 클릭 로깅 에러:', error);
+      console.error('버튼 클릭 로깅 에러:', error);
     }
     router.push('/start');
   };
