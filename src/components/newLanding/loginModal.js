@@ -25,34 +25,65 @@ function LoginModal({ isOpen, onClose }) {
   
   if (!isOpen) return null;
 
-  // 버튼 클릭 이벤트를 DB에 저장하는 함수
-  const logButtonClick = async (buttonType) => {
+  // 각 버튼별로 다른 컬렉션에 저장하는 함수들
+  const logGoogleButtonClick = async () => {
     try {
-      await addDoc(collection(db, 'buttonClicks'), {
-        buttonType: buttonType,
+      await addDoc(collection(db, 'googleLogins'), {
         timestamp: serverTimestamp(),
-        userId: auth.currentUser?.uid || 'anonymous'
       });
     } catch (error) {
-      console.error('버튼 클릭 로깅 에러:', error);
+      console.error('구글 버튼 클릭 로깅 에러:', error);
+    }
+    router.push('/start');
+  };
+
+  const logAppleButtonClick = async () => {
+    try {
+      await addDoc(collection(db, 'appleLogins'), {
+        timestamp: serverTimestamp(),
+      });
+    } catch (error) {
+      console.error('애플 버튼 클릭 로깅 에러:', error);
+    }
+    router.push('/start');
+  };
+
+  const logSignUpButtonClick = async () => {
+    try {
+      await addDoc(collection(db, 'signups'), {
+        timestamp: serverTimestamp(),
+      });
+    } catch (error) {
+      console.error('회원가입 버튼 클릭 로깅 에러:', error);
+    }
+    router.push('/start');
+  };
+
+  const logCloseButtonClick = async () => {
+    try {
+      await addDoc(collection(db, 'modalCloses'), {
+        timestamp: serverTimestamp(),
+      });
+    } catch (error) {
+      console.error('닫기 버튼 클릭 로깅 에러:', error);
     }
     router.push('/start');
   };
 
   const handleGoogleLogin = () => {
-    logButtonClick('google_button');
+    logGoogleButtonClick();
   };
 
   const handleAppleLogin = () => {
-    logButtonClick('apple_button');
+    logAppleButtonClick();
   };
 
   const handleSignUp = () => {
-    logButtonClick('signup_button');
+    logSignUpButtonClick();
   };
 
   const handleClose = () => {
-    logButtonClick('close_button');
+    logCloseButtonClick();
   };
 
   return (
