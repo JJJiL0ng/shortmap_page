@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, OAuthProvider } from 'firebase/auth';
 import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -17,7 +16,6 @@ const firebaseConfig = {
 
 // Firebase 초기화
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const db = getFirestore(app);
 
 function LoginModal({ isOpen, onClose }) {
@@ -31,7 +29,7 @@ function LoginModal({ isOpen, onClose }) {
     router.push('/start');
     
     // 로깅은 백그라운드에서 실행
-    addDoc(collection(db, 'buttonClicks_for_2_18'), {
+    addDoc(collection(db, 'buttonClicks'), {
       timestamp: serverTimestamp(),
       buttonType: buttonType
     }).catch(error => {
