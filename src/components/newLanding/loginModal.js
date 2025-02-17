@@ -1,31 +1,72 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { track } from '@vercel/analytics';
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, OAuthProvider } from 'firebase/auth';
+import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+};
+
+// Firebase 초기화
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 function LoginModal({ isOpen, onClose }) {
   const router = useRouter();
   
   if (!isOpen) return null;
 
-  const handleGoogleLogin = () => {
-    track('Click Google Login');
+  // 버튼 클릭 이벤트를 DB에 저장하는 함수
+  const logButtonClick = async (userId, buttonType) => {
+    try {
+      await addDoc(collection(db, 'buttonClicks'), {
+        userId: userId,
+        buttonType: buttonType,
+        timestamp: serverTimestamp()
+      });
+    } catch (error) {
+      console.error('Error logging button click:', error);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      await logButtonClick(result.user.uid, 'google_login');
+      router.push('/start');
+    } catch (error) {
+      console.error('Google login error:', error);
+    }
+  };
+
+  const handleAppleLogin = async () => {
+    try {
+      const provider = new OAuthProvider('apple.com');
+      const result = await signInWithPopup(auth, provider);
+      await logButtonClick(result.user.uid, 'apple_login');
+      router.push('/start');
+    } catch (error) {
+      console.error('Apple login error:', error);
+    }
+  };
+
+  const handleSignUp = async () => {
+    await logButtonClick('anonymous', 'signup_click');
     router.push('/start');
   };
 
-  const handleAppleLogin = () => {
-    track('Click Apple Login');
-    router.push('/start');
-  };
-
-  const handleSignUp = () => {
-    track('Click Sign Up');
-    router.push('/start');
-  };
-
-  const handleClose = () => {
-    track('Close Login Modal');
+  const handleClose = async () => {
+    await logButtonClick('anonymous', 'modal_close');
     router.push('/start');
   };
 
