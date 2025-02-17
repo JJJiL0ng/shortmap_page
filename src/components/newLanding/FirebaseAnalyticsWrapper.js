@@ -18,8 +18,13 @@ export default function FirebaseAnalyticsWrapper({ children }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const app = initializeApp(firebaseConfig);
-      getAnalytics(app);
+      try {
+        const app = initializeApp(firebaseConfig);
+        getAnalytics(app);
+      } catch (error) {
+        console.warn('Firebase Analytics 초기화 실패:', error.message);
+        // 프로덕션 환경에서는 에러 로깅 서비스를 사용하는 것을 권장합니다
+      }
     }
   }, []);
 

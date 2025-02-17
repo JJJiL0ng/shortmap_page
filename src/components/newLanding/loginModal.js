@@ -26,48 +26,33 @@ function LoginModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   // 버튼 클릭 이벤트를 DB에 저장하는 함수
-  const logButtonClick = async (userId, buttonType) => {
+  const logButtonClick = async (buttonType) => {
     try {
       await addDoc(collection(db, 'buttonClicks'), {
-        userId: userId,
         buttonType: buttonType,
-        timestamp: serverTimestamp()
+        timestamp: serverTimestamp(),
+        userId: auth.currentUser?.uid || 'anonymous'
       });
     } catch (error) {
-      console.error('Error logging button click:', error);
+      console.error('버튼 클릭 로깅 에러:', error);
     }
-  };
-
-  const handleGoogleLogin = async () => {
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      await logButtonClick(result.user.uid, 'google_login');
-      router.push('/start');
-    } catch (error) {
-      console.error('Google login error:', error);
-    }
-  };
-
-  const handleAppleLogin = async () => {
-    try {
-      const provider = new OAuthProvider('apple.com');
-      const result = await signInWithPopup(auth, provider);
-      await logButtonClick(result.user.uid, 'apple_login');
-      router.push('/start');
-    } catch (error) {
-      console.error('Apple login error:', error);
-    }
-  };
-
-  const handleSignUp = async () => {
-    await logButtonClick('anonymous', 'signup_click');
     router.push('/start');
   };
 
-  const handleClose = async () => {
-    await logButtonClick('anonymous', 'modal_close');
-    router.push('/start');
+  const handleGoogleLogin = () => {
+    logButtonClick('google_button');
+  };
+
+  const handleAppleLogin = () => {
+    logButtonClick('apple_button');
+  };
+
+  const handleSignUp = () => {
+    logButtonClick('signup_button');
+  };
+
+  const handleClose = () => {
+    logButtonClick('close_button');
   };
 
   return (
