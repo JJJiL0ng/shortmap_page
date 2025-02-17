@@ -1,7 +1,9 @@
+// src/app/layout.js
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import FirebaseAnalyticsWrapper from '@/components/newLanding/FirebaseAnalyticsWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,41 +33,13 @@ export const metadata = {
   }
 }
 
-// 클라이언트 컴포넌트
-'use client'
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { useEffect } from 'react';
-
-function FirebaseAnalyticsWrapper({ children }) {
-  const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
-  };
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const app = initializeApp(firebaseConfig);
-      getAnalytics(app);
-    }
-  }, []);
-
-  return children;
-}
-
-// 서버 컴포넌트
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <script defer data-domain="shortsmap.xyz" src="https://plausible.io/js/script.hash.outbound-links.pageview-props.tagged-events.js"></script>
       </head>
-      <body className={`${inter.className} `}>
+      <body className={`${inter.className}`}>
         <FirebaseAnalyticsWrapper>
           {children}
           <Analytics debug={true} />
