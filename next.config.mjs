@@ -14,7 +14,7 @@ const nextConfig = {
                 "img-src 'self' blob: data: https:",
                 "font-src 'self' https: data:",
                 "connect-src 'self' vitals.vercel-insights.com *.vercel-insights.com *.vercel-scripts.com va.vercel-scripts.com *.shortsmap.xyz plausible.io *.googleapis.com *.google-analytics.com *.firebase.com *.firebaseio.com *.firebaseapp.com firebaseinstallations.googleapis.com identitytoolkit.googleapis.com securetoken.googleapis.com",
-                "frame-src 'self' apis.google.com accounts.google.com"
+                "frame-src 'self' apis.google.com accounts.google.com *.firebaseapp.com"
               ].join('; ')
             }
           ]
