@@ -1,3 +1,5 @@
+'use client'
+
 // app/layout.js
 import './globals.css'
 import { Inter } from 'next/font/google'
@@ -31,7 +33,7 @@ export const metadata = {
        url: '/og-image.jpg',
        width: 1200,
        height: 630,
-       alt: 'ShortMap Preview'
+       alt: 'ShorstMap Preview'
      }
    ]
  }
