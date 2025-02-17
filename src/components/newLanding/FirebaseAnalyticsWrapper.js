@@ -1,7 +1,7 @@
 // src/components/newLanding/FirebaseAnalyticsWrapper.js
 'use client'
 
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps } from 'firebase/app';
 import { useEffect } from 'react';
 
 export default function FirebaseAnalyticsWrapper({ children }) {
@@ -11,7 +11,7 @@ export default function FirebaseAnalyticsWrapper({ children }) {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && getApps().length === 0) {
       try {
         initializeApp(firebaseConfig);
       } catch (error) {
