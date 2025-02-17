@@ -25,69 +25,34 @@ function LoginModal({ isOpen, onClose }) {
   
   if (!isOpen) return null;
 
-  // 각 버튼별로 다른 컬렉션에 저장하는 함수들
-  const logGoogleButtonClick = async () => {
-    try {
-      await addDoc(collection(db, 'buttonClicks'), {
-        timestamp: serverTimestamp(),
-        buttonType: 'google'
-      });
-    } catch (error) {
-      console.error('버튼 클릭 로깅 에러:', error);
-    }
+  // 로깅 함수를 비동기로 실행하되, 라우팅은 즉시 수행
+  const logButtonClickAndNavigate = (buttonType) => {
+    // 즉시 라우팅 수행
     router.push('/start');
-  };
-
-  const logAppleButtonClick = async () => {
-    try {
-      await addDoc(collection(db, 'buttonClicks'), {
-        timestamp: serverTimestamp(),
-        buttonType: 'apple'
-      });
-    } catch (error) {
+    
+    // 로깅은 백그라운드에서 실행
+    addDoc(collection(db, 'buttonClicks_for_2_18'), {
+      timestamp: serverTimestamp(),
+      buttonType: buttonType
+    }).catch(error => {
       console.error('버튼 클릭 로깅 에러:', error);
-    }
-    router.push('/start');
-  };
-
-  const logSignUpButtonClick = async () => {
-    try {
-      await addDoc(collection(db, 'buttonClicks'), {
-        timestamp: serverTimestamp(),
-        buttonType: 'signup'
-      });
-    } catch (error) {
-      console.error('버튼 클릭 로깅 에러:', error);
-    }
-    router.push('/start');
-  };
-
-  const logCloseButtonClick = async () => {
-    try {
-      await addDoc(collection(db, 'buttonClicks'), {
-        timestamp: serverTimestamp(),
-        buttonType: 'close'
-      });
-    } catch (error) {
-      console.error('버튼 클릭 로깅 에러:', error);
-    }
-    router.push('/start');
+    });
   };
 
   const handleGoogleLogin = () => {
-    logGoogleButtonClick();
+    logButtonClickAndNavigate('google');
   };
 
   const handleAppleLogin = () => {
-    logAppleButtonClick();
+    logButtonClickAndNavigate('apple');
   };
 
   const handleSignUp = () => {
-    logSignUpButtonClick();
+    logButtonClickAndNavigate('signup');
   };
 
   const handleClose = () => {
-    logCloseButtonClick();
+    logButtonClickAndNavigate('close');
   };
 
   return (
