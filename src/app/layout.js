@@ -35,18 +35,20 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
- return (
-   <html lang="en">
-     <body className={`${inter.className} `}>
-       {/* <Header /> */}
-       {children}
-       <Analytics debug={true} />
-       <SpeedInsights 
-         debug={true}
-         sampleRate={1}
-       />
-       {/* <Footer /> */}
-     </body>
-   </html>
- )
+  return (
+    <html lang="en">
+      <head>
+      <script defer data-domain="shortsmap.xyz" src="https://plausible.io/js/script.hash.outbound-links.pageview-props.tagged-events.js"></script>      </head>
+      <body className={`${inter.className} `}>
+        {/* <Header /> */}
+        {children}
+        <Analytics debug={true} />
+        <SpeedInsights 
+          debug={true}
+          sampleRate={1}
+        />
+        {/* <Footer /> */}
+      </body>
+    </html>
+  )
 }
